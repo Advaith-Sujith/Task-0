@@ -120,7 +120,7 @@ try:
     if 'close' not in dt.columns:
         raise ValueError("Close column is missing")
     
-    #Converting non numeric values like NaN to numeric for calculation purposes
+    #Raises exception on invalid values
     dt["close"] = pd.to_numeric(dt["close"], errors="raise")
     
     #Logging validity of dataset
